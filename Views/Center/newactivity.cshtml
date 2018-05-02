@@ -1,0 +1,56 @@
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Dojo Activity Center</a>
+            </div>
+            <span class="float-right">
+                <a asp-area="" asp-controller="Center" asp-action="Dashboard" class="navbar-brand">Home</a>
+                <a class="navbar-brand" href="/">Log Off</a>
+            </span>
+        </div>
+</nav>
+
+<h1>Create an Activity !</h1>
+
+@model entity_app.Models.FormActivityViewModel 
+<form asp-controller="Center" asp-action="CreateActivity" method="POST">
+    <br>
+    <label asp-for="title"></label>
+    <input asp-for="title"/>
+    <br>
+    <span asp-validation-for="title" class="text-danger"></span>
+    <br>
+    <label asp-for="time"></label>
+    <input asp-for="time"/>
+    <br>
+    <span asp-validation-for="time" class="text-danger"></span>
+    <br>
+    <label asp-for="date"></label>
+    <input asp-for="date"/>
+    <br>
+    <span asp-validation-for="date" class="text-danger"></span>
+    <span class="text-danger">@TempData["date_error"]</span>
+    <br>
+    <label asp-for="duration" min="1"></label>
+    <input asp-for="duration"/>
+    <br>
+    <span asp-validation-for="duration" class="text-danger"></span>
+    <br>
+    <select asp-for="duration_time">
+        <option value="minutes">Minutes</option>
+        <option value="hours">Hours</option>
+        <option value="days">Days</option>
+    </select>
+    <br>
+    <span asp-validation-for="duration_time" class="text-danger"></span>
+    <br>
+    <label asp-for="description"></label>
+    <textarea asp-for="description"></textarea>
+    <br>
+    <span asp-validation-for="description" class="text-danger"></span>
+    <br>
+    <button type="submit">Create Activity</button>
+</form>

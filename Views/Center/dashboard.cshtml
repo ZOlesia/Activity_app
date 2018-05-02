@@ -1,0 +1,62 @@
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a asp-area="" asp-controller="Center" asp-action="Dashboard" class="navbar-brand">Dojo Activity Center</a>
+            </div>
+            <span class="float-right">
+                <a asp-area="" asp-controller="Center" asp-action="Dashboard" class="navbar-brand">Home</a>
+                <a class="navbar-brand" href="/logout">Log Off</a>
+            </span>
+        </div>
+</nav>
+
+<h1>Welcome @ViewBag.username.first_name</h1>
+<br>
+<span class="text-danger">@TempData["err"]</span>
+<br>
+<table class="table table-striped text-center">
+    <thead>
+        <tr>
+            <th text-center>Activity</th>
+            <th text-center>Date and Time</th>
+            <th text-center>Duration</th>
+            <th text-center>Event Coordinator</th>
+            <th text-center>Number of Participants</th>
+            <th text-center>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(Center activity in ViewBag.all_activities)
+    {
+        <form action="/action" method="POST">
+            <tr>
+                <input type="hidden" value="@activity.centerid" name="ActivityId">
+                <td><a href="/activity/@activity.centerid">@activity.title</a></td>
+                <td>@activity.date.ToString("MMM dd") at @activity.time</td>
+                <td>@activity.duration  @activity.duration_time</td>
+                <td>@activity.coordinator.first_name</td>
+                <td>@activity.participants.Count</td>
+                @if(@activity.coordinatorid == @ViewBag.user)
+                {
+                    <td><input type="submit" name="action" class="btn btn-danger" value="Delete"></td>
+                }
+                else
+                {
+                    @if(@activity.participants.Exists(u => u.userid == @ViewBag.user))
+                    {
+                        <td><input type="submit" name="action" value="Leave" ></td>
+                    }
+                    else
+                    {
+                        <td><input type="submit" name="action" value="Join"></td>
+                    }
+                }
+            </tr>
+        </form>
+    }
+    </tbody>
+</table>
+
+<a href="/New" class="btn btn-warning pull-right">Create Activity</a>

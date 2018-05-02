@@ -1,0 +1,48 @@
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a asp-area="" asp-controller="Center" asp-action="Dashboard" class="navbar-brand">Dojo Activity Center</a>
+            </div>
+            <span class="float-right">
+                <a asp-area="" asp-controller="Center" asp-action="Dashboard" class="navbar-brand">Home</a>
+                <a class="navbar-brand" href="/">Log Off</a>
+            </span>
+        </div>
+</nav>
+
+
+
+<h1>@ViewBag.all_info.title</h1>
+<h2>Event Coordinator: @ViewBag.all_info.coordinatorid</h2>
+
+
+ @if(@ViewBag.all_info.coordinatorid == @ViewBag.user)
+ {
+    <input type="submit" name="action" class="btn btn-danger" value="Delete">
+}
+
+@foreach (Center item in ViewBag.all_info)
+{
+    @if (@item.participants.Exists(u => u.userid == @ViewBag.user))
+    {
+        <input type="submit" name="action" value="Leave" >
+    }
+    else
+    {
+        <input type="submit" name="action" value="Join">
+    }
+}
+
+
+
+<h3>Description</h3>
+<p>@ViewBag.all_info.description</p>
+
+<h3>Participants:</h3>
+@foreach(var b in @ViewBag.all_info.participants)
+{
+    <p>@b.user.first_name</p>
+}
+

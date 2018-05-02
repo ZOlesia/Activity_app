@@ -1,0 +1,10 @@
+C:\Users\56ole\Documents\DOJO\DojoAssignments\netCore\ASP\ENTITY\entity_app\bin\Debug\netcoreapp2.0\entity_app.deps.json
+C:\Users\56ole\Documents\DOJO\DojoAssignments\netCore\ASP\ENTITY\entity_app\bin\Debug\netcoreapp2.0\entity_app.runtimeconfig.json
+C:\Users\56ole\Documents\DOJO\DojoAssignments\netCore\ASP\ENTITY\entity_app\bin\Debug\netcoreapp2.0\entity_app.runtimeconfig.dev.json
+C:\Users\56ole\Documents\DOJO\DojoAssignments\netCore\ASP\ENTITY\entity_app\bin\Debug\netcoreapp2.0\entity_app.dll
+C:\Users\56ole\Documents\DOJO\DojoAssignments\netCore\ASP\ENTITY\entity_app\bin\Debug\netcoreapp2.0\entity_app.pdb
+C:\Users\56ole\Documents\DOJO\DojoAssignments\netCore\ASP\ENTITY\entity_app\obj\Debug\netcoreapp2.0\entity_app.csproj.CoreCompileInputs.cache
+C:\Users\56ole\Documents\DOJO\DojoAssignments\netCore\ASP\ENTITY\entity_app\obj\Debug\netcoreapp2.0\entity_app.AssemblyInfoInputs.cache
+C:\Users\56ole\Documents\DOJO\DojoAssignments\netCore\ASP\ENTITY\entity_app\obj\Debug\netcoreapp2.0\entity_app.AssemblyInfo.cs
+C:\Users\56ole\Documents\DOJO\DojoAssignments\netCore\ASP\ENTITY\entity_app\obj\Debug\netcoreapp2.0\entity_app.dll
+C:\Users\56ole\Documents\DOJO\DojoAssignments\netCore\ASP\ENTITY\entity_app\obj\Debug\netcoreapp2.0\entity_app.pdb
